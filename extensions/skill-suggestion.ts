@@ -5,8 +5,8 @@ import { suggestSkill } from "../src/skills.ts";
 export default function skillSuggestion(pi: ExtensionAPI) {
   let enabled = process.env.PI_JEV_SKILLS !== "0";
   let active: AbortController | undefined;
-  pi.registerCommand("jev-skills", {
-    description: "Toggle Jev skill suggestions: /jev-skills on|off|status",
+  pi.registerCommand("jev-skill-suggestions", {
+    description: "Toggle Jev skill suggestions: /jev-skill-suggestions on|off|status",
     handler: async (args, ctx) => {
       if (args.trim() === "on") enabled = true;
       else if (args.trim() === "off") { enabled = false; active?.abort(); }

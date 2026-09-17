@@ -12,14 +12,14 @@ Also includes a small, **user-invoked-only** documentation skill: `/skill:jev`.
 Requires Node.js 22.19+ and Pi 0.85.1+ (`@earendil-works/pi-coding-agent`). Tested with Pi 0.85.1. Earlier `@mariozechner` Pi releases are not supported.
 
 ```sh
-pi install git:github.com/clankagent/pi-jev@v0.1.0
+pi install git:github.com/clankagent/pi-jev@v0.1.1
 ```
 
 Set `TYPESAFE_API_KEY` in the environment of the process that launches Pi. For example, after setting it through your shell or secret manager, start `pi`. Never put the key in a prompt or skill file. The package reads this environment variable directly; no configuration file is required.
 
 Run `/reload` in an existing Pi session after installation. The default model is `jev-latest`; optionally set `PI_JEV_MODEL` to a versioned model ID. The API endpoint is fixed to `https://api.typesafe.ai`. SDK debug logging is disabled.
 
-Each extension can be disabled independently with Pi's `pi config`. `/jev-skills on`, `/jev-skills off`, and `/jev-skills status` control suggestions for the current session. `PI_JEV_SKILLS=0` disables them at startup. Without an API key, suggestions are inactive and semantic watches fail before launching a command. Exact-only watches need no key.
+Each extension can be disabled independently with Pi's `pi config`. `/jev-skill-suggestions on`, `/jev-skill-suggestions off`, and `/jev-skill-suggestions status` control suggestions for the current session. `PI_JEV_SKILLS=0` disables them at startup. Without an API key, suggestions are inactive and semantic watches fail before launching a command. Exact-only watches need no key.
 
 ## 1. Agent-defined process conditions
 
